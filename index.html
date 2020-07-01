@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="app" style="width: 100%;text-align: center;"></div>
+	</body>
+	<script>
+		
+		buildNum()
+		
+		function buildNum(){
+			let arr = []
+			for (var i = 0; i < 99; i++) {
+				let num = randomNum(1,32)
+				if (arr.indexOf(num) < 0 && arr.length < 7){
+					arr.push(num)
+				}
+			}
+			arr.sort()
+			arr.push(randomNum(1,16))
+			document.getElementById("app").innerHTML = "<p>"+arr+"</p>"
+		}
+		
+		function randomNum(minNum,maxNum){ 
+		    switch(arguments.length){ 
+		        case 1: 
+		            return parseInt(Math.random()*minNum+1,10); 
+		        break; 
+		        case 2: 
+		            return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+		        break; 
+		            default: 
+		                return 0; 
+		            break; 
+		    } 
+		}
+	</script>
+</html>
